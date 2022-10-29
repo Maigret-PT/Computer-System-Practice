@@ -1,2 +1,1 @@
-# Computer-System-Practice
-![image](https://github.com/Maigret-PT/Computer-System-Practice/blob/main/NEU.webp)
+2022/10/29 19:06
