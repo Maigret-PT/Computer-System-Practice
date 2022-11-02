@@ -1,10 +1,10 @@
-module count6_tb(
+module count60_tb(
 
     );
     reg rst;
     reg clk;
     reg en;
-    wire [3:0] count;
+    wire [7:0] count;
     wire co;
     initial begin
         rst = 0;
@@ -18,5 +18,5 @@ module count6_tb(
     end
     
     always #10 clk = ~clk;
-    count_6 count6(rst,clk,en,count,co);    
+    count_60 count60(rst,clk,en,count,co);    
 endmodule
