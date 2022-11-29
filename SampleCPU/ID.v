@@ -15,7 +15,7 @@ module ID(
     input wire ex_write_en,              //EX write enable
     input wire [4:0] ex_write_address,   //5bits
     input wire [31:0] ex_write_data,     //32bits
-    input wire ex_ram_read,       //EX_RAM(random access memory)
+    
 
     input wire mem_write_en,             //MEM write enable
     input wire [4:0] mem_write_address,  //5bits
@@ -288,7 +288,7 @@ module ID(
     wire [31:0] pc_plus_4;
     assign pc_plus_4 = id_pc + 32'h4;
 
-    assign rs_eq_rt = (rdata1 == rdata2);
+    assign rs_eq_rt = (rdata1_to_ex == rdata2_to_ex);
 
     assign br_e = inst_beq & rs_eq_rt;
     assign br_addr = inst_beq ? (pc_plus_4 + {{14{inst[15]}},inst[15:0],2'b0}) : 32'b0;

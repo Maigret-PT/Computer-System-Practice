@@ -52,7 +52,15 @@ module mycpu_core(
         .inst_sram_rdata (inst_sram_rdata ),
         .wb_to_rf_bus    (wb_to_rf_bus    ),
         .id_to_ex_bus    (id_to_ex_bus    ),
-        .br_bus          (br_bus          )
+        .br_bus          (br_bus          ),
+
+        //RAW 
+        .ex_write_en     (ex_to_mem_bus[37]),
+        .ex_write_address(ex_to_mem_bus[36:32]),
+        .ex_write_data   (ex_to_mem_bus[31:0]),
+        .mem_write_en    (mem_to_wb_bus[37]),
+        .mem_write_address(mem_to_wb_bus[36:32]),
+        .mem_write_data  (mem_to_wb_bus[31:0])
     );
 
     EX u_EX(
